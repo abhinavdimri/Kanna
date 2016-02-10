@@ -85,18 +85,18 @@ import Kanna
 let html = "<html>...</html>"
 
 if let doc = Kanna.HTML(html: html, encoding: NSUTF8StringEncoding) {
-    println(doc.title)
+    print(doc.title)
     
     // Search for nodes by CSS
     for link in doc.css("a, link") {
-        println(link.text)
-        println(link["href"])
+        print(link.text)
+        print(link["href"])
     }
     
     // Search for nodes by XPath
     for link in doc.xpath("//a | //link") {
-        println(link.text)
-        println(link["href"])
+        print(link.text)
+        print(link["href"])
     }
 }
 ```
@@ -109,7 +109,7 @@ if let doc = Kanna.XML(xml: xml, encoding: NSUTF8StringEncoding) {
                     "ss": "urn:schemas-microsoft-com:office:spreadsheet"
                 ]
     if let author = doc.at_xpath("//o:Author", namespaces: namespaces) {
-        println(author.text)
+        print(author.text)
     }
 }
 ```
@@ -133,13 +133,13 @@ if let doc = Kanna.HTML(html: html, encoding: NSUTF8StringEncoding) {
 // Swift-HTML-Parser
 if let nodes = parser.body?.findChildTags("div") {
     for node in nodes {
-        println(node.contents)
+        print(node.contents)
     }
 }
 
 // NEW: Kanna
 for node in doc.css("div") {
-    println(doc.text)
+    print(doc.text)
 }
 ```
 
@@ -148,13 +148,13 @@ for node in doc.css("div") {
 // Swift-HTML-Parser
 if let nodes = parser.body?.xpath("//div") {
     for node in nodes {
-        println(node.contents)
+        print(node.contents)
     }
 }
 
 // New: Kanna
 for node in doc.xpath("//div") {
-    println(node.text)
+    print(node.text)
 }
 ```
 
@@ -163,7 +163,7 @@ for node in doc.xpath("//div") {
 // Swift-HTML-Parser
 if let nodes = parser.body?.css("li:nth-child(2n)") {
     for node in nodes {
-        println(node.contents)
+        print(node.contents)
     }
 }
 
@@ -177,12 +177,12 @@ for node in doc.css("li:nth-child(2n)") {
 ```swift
 // Swift-HTML-Parser
 if let node = parser.body?.findChildTag("div") {
-    println(node.contents)
+    print(node.contents)
 }
 
 // New: Kanna
 if let node = doc.at_css("div") {
-    println(node.text)
+    print(node.text)
 }
 ```
 
